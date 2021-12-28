@@ -1,0 +1,59 @@
+@import './fonts';
+
+@primary: #00c38b;
+
+:root {
+  --primary: @primary;
+  --inactive: #cccccc;
+  --inactive-bg: #7c7c7c;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Gotham;
+  line-height: 1.42857683;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-primary {
+  border-color: var(--primary);
+  background-color: var(--primary);
+
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    color: #000;
+    border-color: var(--inactive-bg);
+    background-color: var(--inactive-bg);
+  }
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+
+  &:hover,
+  &:not(:disabled):not(.disabled).active,
+  &:not(:disabled):not(.disabled):active {
+    border-color: var(--primary);
+    background-color: var(--primary);
+  }
+}
+
+.btn-primary,
+.btn-outline-primary {
+  &.focus, &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(@primary, .5);
+  }
+
+  &.disabled, &:disabled {
+    color: var(--inactive);
+    border-color: var(--inactive-bg);
+    background-color: var(--inactive-bg);
+  }
+}
